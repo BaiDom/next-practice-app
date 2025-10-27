@@ -1,13 +1,14 @@
 import Link from "next/link";
 import React from "react";
 import LogoutButton from "./LogoutButton";
+import { getSession } from "../_lib/session";
 
-const Navbar = () => {
-  const session = false;
+const Navbar = async () => {
+  const session = await getSession();
 
   return (
-    <nav className="bg-white shadow-sm">
-      <div className="container mx-4 p-4 flex justify-between items center">
+    <nav className="w-full bg-white shadow-sm">
+      <div className="container mx-auto p-4 flex justify-between items-center">
         <Link href="/" className="text-xl font-bold text-blue-600">
           Contact Manager
         </Link>

@@ -3,12 +3,11 @@
 import axios from "axios";
 import { redirect } from "next/navigation";
 import { UserType } from "../_types/user";
+import { deleteSession, setSession } from "../_lib/session";
 
 const API_URL = "http://localhost:3001";
 
 export const loginAction = async (formData: FormData) => {
-  console.log(formData, "formdata");
-
   try {
     const response = await axios.get(
       `${API_URL}/users?email=${formData.get("email")}&password=${formData.get(
@@ -20,7 +19,8 @@ export const loginAction = async (formData: FormData) => {
     if (!user) {
       throw new Error("Invalid Credentials");
     }
-    //set user in cookies
+
+    await setSession({ name: user.name, email: user.email, id: user.id });
   } catch (error) {
     throw new Error("Failed to login");
   }
@@ -28,6 +28,7 @@ export const loginAction = async (formData: FormData) => {
   redirect("/contact");
 };
 
-export const logout = async () => {
+export const logoutAction = async () => {
+  await deleteSession();
   redirect("/login");
 };

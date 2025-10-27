@@ -1,18 +1,35 @@
 {
   "contacts": [
     {
-      "id": "1",
-      "name": "John Doe",
-      "email": "john@test.com",
-      "userId": "1"
+      "name": "John new contact",
+      "email": "John1@gmail.com",
+      "userId": "1",
+      "id": "1"
+    },
+    {
+      "name": "dom update",
+      "email": "dom@gmail.com",
+      "userId": "1",
+      "id": "691f"
+    },
+    {
+      "id": "5f1e",
+      "name": "stevescontact",
+      "email": "stevescontact@gmail.com",
+      "userId": "2"
     }
   ],
-
   "users": [
     {
       "id": "1",
       "name": "user1",
       "email": "user1@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "2",
+      "name": "steve",
+      "email": "steve@gmail.com",
       "password": "123456"
     }
   ]

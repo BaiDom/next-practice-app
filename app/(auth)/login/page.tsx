@@ -1,6 +1,5 @@
 import LoginForm from "@/app/_components/LoginForm";
 import Link from "next/link";
-import React from "react";
 // server component by default
 
 const LoginPage = () => {
